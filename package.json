@@ -1,0 +1,21 @@
+{
+  "name": "mcp-nordic",
+  "version": "0.1.0",
+  "description": "Unified MCP server for Nordic data: company registries (DK/NO/FI), addresses, weather, and energy prices",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "mcp-nordic": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test.js"
+  },
+  "keywords": ["mcp", "nordic", "danish", "norwegian", "finnish", "scandinavia", "cvr", "weather", "energy", "addresses"],
+  "author": "robobobby",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.0.0"
+  }
+}
