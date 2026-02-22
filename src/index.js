@@ -10,6 +10,8 @@ import { register as registerDanishWeather } from "./servers/danish-weather.js";
 import { register as registerDanishEnergy } from "./servers/danish-energy.js";
 import { register as registerNorwegianCompanies } from "./servers/norwegian-companies.js";
 import { register as registerFinnishCompanies } from "./servers/finnish-companies.js";
+import { register as registerNorwegianWeather } from "./servers/norwegian-weather.js";
+import { register as registerSwedishWeather } from "./servers/swedish-weather.js";
 
 // Parse CLI args for selective loading
 const args = new Set(process.argv.slice(2).map(a => a.replace(/^--/, "")));
@@ -17,7 +19,7 @@ const loadAll = args.size === 0 || args.has("all");
 
 const server = new McpServer({
   name: "mcp-nordic",
-  version: "0.1.0",
+  version: "0.2.0",
 });
 
 // Register modules based on flags (default: all)
@@ -28,6 +30,8 @@ const modules = {
   "dk-energy": registerDanishEnergy,
   "no-companies": registerNorwegianCompanies,
   "fi-companies": registerFinnishCompanies,
+  "no-weather": registerNorwegianWeather,
+  "se-weather": registerSwedishWeather,
 };
 
 let loaded = 0;
@@ -57,6 +61,8 @@ One server, all Nordic data. ${loaded} modules loaded.
 - **dk-energy** — Danish energy prices & CO2 (Energi Data Service)
 - **no-companies** — Norwegian company registry (Brønnøysund)
 - **fi-companies** — Finnish company registry (PRH/YTJ)
+- **no-weather** — Norwegian weather (MET Norway/yr.no Locationforecast 2.0)
+- **se-weather** — Swedish weather (SMHI Open Data)
 
 ## Selective Loading
 Load specific modules: \`mcp-nordic --dk-cvr --dk-weather\`
