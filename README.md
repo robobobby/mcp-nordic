@@ -78,6 +78,24 @@ Ask your AI assistant:
 | 🇫🇮 Finland | ✅ PRH/YTJ | — | — | — |
 | 🇸🇪 Sweden | — | ✅ SMHI | — | — |
 
+## Cloudflare Workers deployment (hosted MCP)
+
+This repo now includes a Worker entrypoint using MCP's web-standard streamable HTTP transport.
+
+### Deploy
+
+```bash
+npm install
+npm run worker:deploy
+```
+
+### Endpoints
+
+- `https://<your-worker>.workers.dev/health`
+- `https://<your-worker>.workers.dev/mcp`
+
+Use the `/mcp` URL as your hosted MCP endpoint.
+
 ## Individual servers
 
 Each module is also available as a standalone server:
