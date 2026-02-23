@@ -1,6 +1,6 @@
 # mcp-nordic
 
-One MCP server for all Nordic data. 26 tools across 8 modules, zero API keys required.
+One MCP server for all Nordic data. 29 tools across 9 modules, zero API keys required.
 
 ## What's included
 
@@ -13,6 +13,7 @@ One MCP server for all Nordic data. 26 tools across 8 modules, zero API keys req
 | 🇳🇴 `no-companies` | `no_search_companies`, `no_company_lookup`, `no_search_subunits`, `no_company_roles` | [Brønnøysund](https://data.brreg.no) |
 | 🇳🇴 `no-weather` | `no_current_weather`, `no_weather_forecast` | [MET Norway/yr.no](https://api.met.no) |
 | 🇫🇮 `fi-companies` | `fi_search_companies`, `fi_company_lookup`, `fi_search_by_industry`, `fi_recent_registrations` | [PRH/YTJ](https://avoindata.prh.fi) |
+| 🇫🇮 `fi-weather` | `fi_current_weather`, `fi_weather_forecast`, `fi_compare_weather` | [Open-Meteo](https://open-meteo.com) |
 | 🇸🇪 `se-weather` | `se_current_weather`, `se_weather_forecast` | [SMHI](https://opendata.smhi.se) |
 
 All APIs are free, open, and require no authentication.
@@ -54,7 +55,7 @@ Only need Danish weather and Finnish companies?
 }
 ```
 
-Available flags: `--dk-cvr`, `--dk-addresses`, `--dk-weather`, `--dk-energy`, `--no-companies`, `--no-weather`, `--fi-companies`, `--se-weather`, `--all` (default).
+Available flags: `--dk-cvr`, `--dk-addresses`, `--dk-weather`, `--dk-energy`, `--no-companies`, `--no-weather`, `--fi-companies`, `--fi-weather`, `--se-weather`, `--all` (default).
 
 ## Examples
 
@@ -75,7 +76,7 @@ Ask your AI assistant:
 |---------|-----------|---------|-----------|--------|
 | 🇩🇰 Denmark | ✅ CVR | ✅ DMI | ✅ DAWA | ✅ Energinet |
 | 🇳🇴 Norway | ✅ Brønnøysund | ✅ MET/yr.no | — | — |
-| 🇫🇮 Finland | ✅ PRH/YTJ | — | — | — |
+| 🇫🇮 Finland | ✅ PRH/YTJ | ✅ Open-Meteo | — | — |
 | 🇸🇪 Sweden | — | ✅ SMHI | — | — |
 
 ## Cloudflare Workers deployment (hosted MCP)
