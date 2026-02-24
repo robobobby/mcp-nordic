@@ -112,6 +112,8 @@ Each module is also available as a standalone server:
 - [mcp-norwegian-weather](https://github.com/robobobby/mcp-norwegian-weather)
 - [mcp-finnish-companies](https://github.com/robobobby/mcp-finnish-companies)
 - [mcp-swedish-weather](https://github.com/robobobby/mcp-swedish-weather)
+- [mcp-finnish-weather](https://github.com/robobobby/mcp-finnish-weather)
+- [mcp-norwegian-addresses](https://github.com/robobobby/mcp-norwegian-addresses)
 
 ## License
 
