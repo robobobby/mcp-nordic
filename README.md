@@ -1,6 +1,6 @@
 # mcp-nordic
 
-One MCP server for all Nordic data. 29 tools across 9 modules, zero API keys required.
+One MCP server for all Nordic data. 33 tools across 10 modules, zero API keys required.
 
 ## What's included
 
@@ -14,6 +14,7 @@ One MCP server for all Nordic data. 29 tools across 9 modules, zero API keys req
 | 🇳🇴 `no-weather` | `no_current_weather`, `no_weather_forecast` | [MET Norway/yr.no](https://api.met.no) |
 | 🇫🇮 `fi-companies` | `fi_search_companies`, `fi_company_lookup`, `fi_search_by_industry`, `fi_recent_registrations` | [PRH/YTJ](https://avoindata.prh.fi) |
 | 🇫🇮 `fi-weather` | `fi_current_weather`, `fi_weather_forecast`, `fi_compare_weather` | [Open-Meteo](https://open-meteo.com) |
+| 🇳🇴 `no-addresses` | `no_address_search`, `no_reverse_geocode`, `no_postal_code_lookup`, `no_municipality_addresses` | [Kartverket](https://ws.geonorge.no/adresser/v1/) |
 | 🇸🇪 `se-weather` | `se_current_weather`, `se_weather_forecast` | [SMHI](https://opendata.smhi.se) |
 
 All APIs are free, open, and require no authentication.
@@ -55,7 +56,7 @@ Only need Danish weather and Finnish companies?
 }
 ```
 
-Available flags: `--dk-cvr`, `--dk-addresses`, `--dk-weather`, `--dk-energy`, `--no-companies`, `--no-weather`, `--fi-companies`, `--fi-weather`, `--se-weather`, `--all` (default).
+Available flags: `--dk-cvr`, `--dk-addresses`, `--dk-weather`, `--dk-energy`, `--no-companies`, `--no-addresses`, `--no-weather`, `--fi-companies`, `--fi-weather`, `--se-weather`, `--all` (default).
 
 ## Examples
 
@@ -69,13 +70,15 @@ Ask your AI assistant:
 - "What's the current energy mix in Denmark?"
 - "Search for Norwegian companies in the oil industry"
 - "Weather in Tromsø vs Kiruna?"
+- "Find addresses on Bryggen in Bergen"
+- "What's at coordinates 59.91, 10.75 in Norway?"
 
 ## Country coverage
 
 | Country | Companies | Weather | Addresses | Energy |
 |---------|-----------|---------|-----------|--------|
 | 🇩🇰 Denmark | ✅ CVR | ✅ DMI | ✅ DAWA | ✅ Energinet |
-| 🇳🇴 Norway | ✅ Brønnøysund | ✅ MET/yr.no | — | — |
+| 🇳🇴 Norway | ✅ Brønnøysund | ✅ MET/yr.no | ✅ Kartverket | — |
 | 🇫🇮 Finland | ✅ PRH/YTJ | ✅ Open-Meteo | — | — |
 | 🇸🇪 Sweden | — | ✅ SMHI | — | — |
 

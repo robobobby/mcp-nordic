@@ -9,6 +9,7 @@ import { register as registerFinnishCompanies } from "./servers/finnish-companie
 import { register as registerNorwegianWeather } from "./servers/norwegian-weather.js";
 import { register as registerSwedishWeather } from "./servers/swedish-weather.js";
 import { register as registerFinnishWeather } from "./servers/finnish-weather.js";
+import { register as registerNorwegianAddresses } from "./servers/norwegian-addresses.js";
 
 const modules = {
   "dk-cvr": registerDanishCVR,
@@ -20,6 +21,7 @@ const modules = {
   "no-weather": registerNorwegianWeather,
   "se-weather": registerSwedishWeather,
   "fi-weather": registerFinnishWeather,
+  "no-addresses": registerNorwegianAddresses,
 };
 
 export function createServerFromArgv(argv = []) {
@@ -31,7 +33,7 @@ export function createServerFromArgv(argv = []) {
 export function createServer({ loadAll = true, args = new Set() } = {}) {
   const server = new McpServer({
     name: "mcp-nordic",
-    version: "0.3.0",
+    version: "0.4.0",
   });
 
   let loaded = 0;
@@ -46,7 +48,7 @@ export function createServer({ loadAll = true, args = new Set() } = {}) {
     contents: [{
       uri: uri.href,
       mimeType: "text/markdown",
-      text: `# Nordic MCP Server\n\nOne server, all Nordic data. ${loaded} modules loaded.\n\n## Modules\n- **dk-cvr** — Danish company registry (CVR/cvrapi.dk)\n- **dk-addresses** — Danish addresses (DAWA)\n- **dk-weather** — Danish weather (DMI HARMONIE 2km via Open-Meteo)\n- **dk-energy** — Danish energy prices & CO2 (Energi Data Service)\n- **no-companies** — Norwegian company registry (Brønnøysund)\n- **fi-companies** — Finnish company registry (PRH/YTJ)\n- **no-weather** — Norwegian weather (MET Norway/yr.no Locationforecast 2.0)\n- **se-weather** — Swedish weather (SMHI Open Data)\n- **fi-weather** — Finnish weather (Open-Meteo, covers all of Finland incl. Lapland)\n\n## All APIs are free, no authentication required.\n`,
+      text: `# Nordic MCP Server\n\nOne server, all Nordic data. ${loaded} modules loaded.\n\n## Modules\n- **dk-cvr** — Danish company registry (CVR/cvrapi.dk)\n- **dk-addresses** — Danish addresses (DAWA)\n- **dk-weather** — Danish weather (DMI HARMONIE 2km via Open-Meteo)\n- **dk-energy** — Danish energy prices & CO2 (Energi Data Service)\n- **no-companies** — Norwegian company registry (Brønnøysund)\n- **fi-companies** — Finnish company registry (PRH/YTJ)\n- **no-weather** — Norwegian weather (MET Norway/yr.no Locationforecast 2.0)\n- **se-weather** — Swedish weather (SMHI Open Data)\n- **fi-weather** — Finnish weather (Open-Meteo, covers all of Finland incl. Lapland)\n- **no-addresses** — Norwegian addresses (Kartverket/Geonorge)\n\n## All APIs are free, no authentication required.\n`,
     }],
   }));
 
